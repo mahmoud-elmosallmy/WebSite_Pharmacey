@@ -4,15 +4,15 @@ import { FaSearch } from "react-icons/fa";
 import { useFilterDoctors } from '../../Context/DoctorsFilterContext';
 import SearchDoctors from './SearchDoctors';
 import { useDoctors } from '../../Context/DoctorsContext';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
 
 function InputSearch() {
 
     const { 
         // filters: {search} ,
-          updateFilterValue } =useFilterDoctors();
+          updateFilterValue , filterDoctors } =useFilterDoctors();
     const {doctors} = useDoctors();
-
+        console.log(filterDoctors);
     const handleSubmit = (e) => {
         e.preventDefault()
     }
@@ -31,9 +31,8 @@ function InputSearch() {
                         <FaSearch /> بحث
                     </button>
                 </form>
+                {filterDoctors.length > 0 && <SearchDoctors /> }
                 {/* {search && <SearchDoctors /> } */}
-                { <SearchDoctors /> }
-                <NavLink to={`/show_doctor/10`} className='box'>ششششششششششش</NavLink>
             </div>
         </InputSearchStyle>
     )

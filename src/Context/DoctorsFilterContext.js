@@ -43,7 +43,7 @@ function DoctorsFilterContext({children}) {
     useEffect(() => {
         dispatch({type: "FILTER_REGION"})
         dispatch({type: "FILTER_DOCTORS"})
-    },[state.filters,doctors ,numId])
+    },[state.filters])
 
     // useEffect(() => {
     //     dispatch({type: "FILTER_REGION", payload: state.doctorsCategory})
