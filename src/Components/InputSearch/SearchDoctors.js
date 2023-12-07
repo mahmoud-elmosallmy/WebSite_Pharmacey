@@ -5,12 +5,14 @@ import styled from 'styled-components';
 
 function SearchDoctors() {
 
-    const {filterDoctors , setOnSearch} = useFilterDoctors()
+    const {filterDoctors } = useFilterDoctors()
+    // const {filterDoctors , setOnSearch} = useFilterDoctors()
 
     const showDoctorsSearch = filterDoctors.map((ele) => {
         console.log(ele.id);
         return (
-            <NavLink to={`/show_doctor/${ele.id}`} className='box' onClick={() => setOnSearch(ele.name)}>
+            // <NavLink to={`/show_doctor/${ele.id}`} className='box' onClick={() => setOnSearch(ele.name)}>
+            <NavLink to={`/show_doctor/${ele.id}`} className='box' >
                 <div className='data'>
                     <h5>{ele.name}</h5>
                     <div className='category_region'>

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useParams } from 'react-router';
 import styled from 'styled-components'
 import { useFilterDoctors } from '../../Context/DoctorsFilterContext';
-// import HeaderTopBody from '../Header/HeaderTopBody';
+import HeaderTopBody from '../Header/HeaderTopBody';
 
 function ShowDoctor() {
 
@@ -14,107 +14,107 @@ function ShowDoctor() {
   const { all_doctors } = useFilterDoctors()
 console.log(all_doctors);
 
-//   const showDoctor = all_doctors.filter((ele) => {
-//     return ele.id === id
-//   }).map((ele) => {
-//     return(
-//         <tr key={ele.id}>
-//             <td className='add_bottom'>
-//                 <div className='child'>
-//                     {ele.address.map((Elem) => {
-//                         return (
-//                             <p>{Elem}</p>
-//                         )
-//                     })}
-//                 </div>
-//             </td>
-//             <td className='add_bottom'>
-//                 <div className='child'>
-//                     {ele.region.map((Elem) => {
-//                         return (
-//                             <p>{Elem}</p>
-//                         )
-//                     })}
-//                 </div>
-//             </td>
+  const showDoctor = all_doctors.filter((ele) => {
+    return ele.id === id
+  }).map((ele) => {
+    return(
+        <tr key={ele.id}>
+            <td className='add_bottom'>
+                <div className='child'>
+                    {ele.address.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                </div>
+            </td>
+            <td className='add_bottom'>
+                <div className='child'>
+                    {ele.region.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                </div>
+            </td>
 
-//             <td className='add_bottom'>
-//                 <div className='child'>
-//                     {ele.appointments.map((Elem) => {
-//                         return (
-//                             <p>{Elem}</p>
-//                         )
-//                     })}
-//                     {ele.appointmentsRegion2 && ele.appointmentsRegion2.map((Elem) => {
-//                         return (
-//                             <p>{Elem}</p>
-//                         )
-//                     })}
-//                 </div>
-//             </td>
-//             <td className='add_bottom'>
-//                 <div className='child'>
-//                     {ele.days.map((Elem) => {
-//                         return (
-//                             <p>{Elem}</p>
-//                         )
-//                     })}
-//                     {ele.daysRegion2 && ele.daysRegion2.map((Elem) => {
-//                         return (
-//                             <p>{Elem}</p>
-//                         )
-//                     })}
-//                     {ele.daysRegion3 && ele.daysRegion3.map((Elem) => {
-//                         return (
-//                             <p>{Elem}</p>
-//                         )
-//                     })}
-//                 </div>
-//             </td>
-//             <td className='add_bottom'>
-//                 <div className='child'>
-//                     {ele.clinicNumber && ele.clinicNumber.map((Elem) => {
-//                         return (
-//                             <p>{Elem}</p>
-//                         )
-//                     })}
-//                     {ele.clinicNumberRegion2 && ele.clinicNumberRegion2.map((Elem) => {
-//                         console.log(Elem);
-//                         return (
-//                             <p>{Elem}</p>
-//                             )
-//                         })}
-//                     {ele.clinicNumberRegion3 && ele.clinicNumberRegion3.map((Elem) => {
-//                         console.log(Elem);
-//                         return (
-//                             <p>{Elem}</p>
-//                         )
-//                     })}
-//                 </div>
-//             </td>
-//             <td>
-//                 <div className='child'>
-//                     {ele.privateNumber}
-//                 </div>
-//             </td>
-//             <td>
-//                 <div className='child'>
-//                     {ele.name}
-//                 </div>
-//             </td>
-//             <td>
-//                 <div className='child'>
-//                     {ele.category}
-//                 </div>
-//             </td>
-//             <td>
-//                 <div className='child'>
-//                     {ele.id}
-//                 </div>
-//             </td>
-//         </tr>
-//     )
-//   })
+            <td className='add_bottom'>
+                <div className='child'>
+                    {ele.appointments.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                    {ele.appointmentsRegion2 && ele.appointmentsRegion2.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                </div>
+            </td>
+            <td className='add_bottom'>
+                <div className='child'>
+                    {ele.days.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                    {ele.daysRegion2 && ele.daysRegion2.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                    {ele.daysRegion3 && ele.daysRegion3.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                </div>
+            </td>
+            <td className='add_bottom'>
+                <div className='child'>
+                    {ele.clinicNumber && ele.clinicNumber.map((Elem) => {
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                    {ele.clinicNumberRegion2 && ele.clinicNumberRegion2.map((Elem) => {
+                        console.log(Elem);
+                        return (
+                            <p>{Elem}</p>
+                            )
+                        })}
+                    {ele.clinicNumberRegion3 && ele.clinicNumberRegion3.map((Elem) => {
+                        console.log(Elem);
+                        return (
+                            <p>{Elem}</p>
+                        )
+                    })}
+                </div>
+            </td>
+            <td>
+                <div className='child'>
+                    {ele.privateNumber}
+                </div>
+            </td>
+            <td>
+                <div className='child'>
+                    {ele.name}
+                </div>
+            </td>
+            <td>
+                <div className='child'>
+                    {ele.category}
+                </div>
+            </td>
+            <td>
+                <div className='child'>
+                    {ele.id}
+                </div>
+            </td>
+        </tr>
+    )
+  })
   const gitName = all_doctors.filter((ele) => {
     return ele.id === id
   }).map((ele) => {
@@ -149,7 +149,7 @@ console.log(gitName );
   return (
     <ShowDoctorStyle>
         <div className='container'>
-            {/* <HeaderTopBody namebody={gitName} />
+            <HeaderTopBody namebody={gitName} />
             <table width="100%">
                 <thead>
                     <tr>
@@ -167,8 +167,7 @@ console.log(gitName );
                 <tbody>
                     {showDoctor}
                 </tbody>
-            </table> */}
-            <div>page again</div>
+            </table>
         </div>
     </ShowDoctorStyle>
   )
