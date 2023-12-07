@@ -9,8 +9,10 @@ import { useDoctors } from '../../Context/DoctorsContext';
 function InputSearch() {
 
     const { 
-        // filters: {search} ,
-          updateFilterValue , filterDoctors } =useFilterDoctors();
+        filters: {search} ,
+          updateFilterValue 
+        //   , filterDoctors
+         } =useFilterDoctors();
     const {doctors} = useDoctors();
         // console.log(updateFilterValue);
     const handleSubmit = (e) => {
@@ -38,8 +40,8 @@ function InputSearch() {
                         <FaSearch /> بحث
                     </button>
                 </form>
-                {filterDoctors.length > 0 && <SearchDoctors /> }
-                {/* {search && <SearchDoctors /> } */}
+                {/* {filterDoctors.length > 0 && <SearchDoctors /> } */}
+                {search && <SearchDoctors /> }
             </div>
         </InputSearchStyle>
     )
