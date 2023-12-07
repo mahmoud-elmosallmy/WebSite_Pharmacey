@@ -8,7 +8,9 @@ import { NavLink } from 'react-router-dom';
 
 function InputSearch() {
 
-    const { filters: {search} ,  updateFilterValue } =useFilterDoctors();
+    const { 
+        // filters: {search} ,
+          updateFilterValue } =useFilterDoctors();
     const {doctors} = useDoctors();
 
     const handleSubmit = (e) => {
@@ -29,7 +31,8 @@ function InputSearch() {
                         <FaSearch /> بحث
                     </button>
                 </form>
-                {search && <SearchDoctors /> }
+                {/* {search && <SearchDoctors /> } */}
+                { <SearchDoctors /> }
                 <NavLink to={`/show_doctor/10`} className='box'>ششششششششششش</NavLink>
             </div>
         </InputSearchStyle>
