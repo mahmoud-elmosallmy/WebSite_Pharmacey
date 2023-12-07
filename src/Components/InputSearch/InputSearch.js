@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { FaSearch } from "react-icons/fa";
 import { useFilterDoctors } from '../../Context/DoctorsFilterContext';
@@ -17,12 +17,12 @@ function InputSearch() {
         e.preventDefault()
     }
 
-    const [text , setText] = useState()
+    // const [text , setText] = useState()
 
-    const handleText = (ele) => {
-        // console.log(ele.target.value);
-        setText(ele.target.value);
-    }
+    // const handleText = (ele) => {
+    //     // console.log(ele.target.value);
+    //     setText(ele.target.value);
+    // }
 
     return (
         <InputSearchStyle>
@@ -32,7 +32,7 @@ function InputSearch() {
             <h2>إبحث عن الدكتور</h2>
             <div className="input_search">
                 <form onClick={handleSubmit} className="form-outline" >
-                    <input type="search" id="form1" className="form-control" name='search' value={text} placeholder='إكتب هنا' onClick={handleText} onChange={updateFilterValue} />
+                    <input type="search" id="form1" className="form-control" name='search' placeholder='إكتب هنا' onChange={updateFilterValue} />
                     {/* <label className="form-label" htmlFor="form1">Search</label> */}
                     <button type="submit" className="btn btn-primary" >
                         <FaSearch /> بحث
