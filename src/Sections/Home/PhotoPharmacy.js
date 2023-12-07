@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Photo from "../../Assets/parmacey.png";
+import Photo from "../../Assets/logophoto.png";
 function PhotoPharmacy() {
 
 
@@ -9,16 +9,17 @@ function PhotoPharmacy() {
         <div className='divimage'>
             <img src={Photo} alt='PhotoPharmacy'/>
         </div>
-        <div className='namedoc'> 
+        {/* <div className='namedoc'> 
             <h6>. صيدلية الدكتور عبدالبديع</h6>
             <p> متاح خدمة التوصبل مجانا </p>
-        </div>
+        </div> */}
     </PhotoPharmacyStyle>
   )
 }
 const PhotoPharmacyStyle = styled.section`
 position: relative;
- &::before {
+box-shadow: 0px 0px 12px 17px #ccc;
+ /* &::before {
     content: '';
     position: absolute;
     right: 35px;
@@ -29,7 +30,7 @@ position: relative;
     z-index: 1;
     filter: blur(23px);
     opacity: 0.9;
-}
+} */
 img {
     width: 100%;
 }

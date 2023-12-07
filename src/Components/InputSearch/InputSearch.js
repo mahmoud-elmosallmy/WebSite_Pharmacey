@@ -44,7 +44,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 height: 18vh;
-margin: 35px 0px;
+margin: 50px 0px;
 
 .num_doctor {
     display: flex;
