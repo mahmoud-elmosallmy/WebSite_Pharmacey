@@ -24,6 +24,7 @@ function Header() {
                         <div className='links'>
                             <Link to={'/'} onClick={() => setMenuIcon(false)} > الرئيسية </Link>
                             <Link to={'/specialties'} onClick={() => setMenuIcon(false)} > التخصصات </Link>
+                            <Link to={'/doctors'} onClick={() => setMenuIcon(false)} > الدكاترة </Link>
                             <Link to={'/support'} onClick={() => setMenuIcon(false)} > الدعم </Link>
                         </div>
 

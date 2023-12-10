@@ -8,104 +8,106 @@ function TableDoctor({doctors}) {
 
     const { isLoadingDataCategory } = useDoctors()
 
+    
+    // console.log(doctors);
     let num = 0
-    const showDoctors = doctors.map((ele) => {
+    const showDoctors = doctors.map((ele,i) => {
         return(
-            <tr key={ele.id}>
-            <td className='add_bottom'>
-                <div className='child'>
-                    {ele.address.map((Elem) => {
-                        return (
-                            <p>{Elem}</p>
-                        )
-                    })}
-                </div>
-            </td>
-            <td className='add_bottom'>
-                <div className='child'>
-                    {ele.region.map((Elem) => {
-                        return (
-                            <p>{Elem}</p>
-                        )
-                    })}
-                </div>
-            </td>
-
-            <td className='add_bottom'>
-                <div className='child'>
-                    {ele.appointments.map((Elem) => {
-                        return (
-                            <p>{Elem}</p>
-                        )
-                    })}
-                    {ele.appointmentsRegion2 && ele.appointmentsRegion2.map((Elem) => {
-                        return (
-                            <p>{Elem}</p>
-                        )
-                    })}
-                </div>
-            </td>
-            <td className='add_bottom'>
-                <div className='child'>
-                    {ele.days.map((Elem) => {
-                        return (
-                            <p>{Elem}</p>
-                        )
-                    })}
-                    {ele.daysRegion2 && ele.daysRegion2.map((Elem) => {
-                        return (
-                            <p>{Elem}</p>
-                        )
-                    })}
-                    {ele.daysRegion3 && ele.daysRegion3.map((Elem) => {
-                        return (
-                            <p>{Elem}</p>
-                        )
-                    })}
-                </div>
-            </td>
-            <td className='add_bottom'>
-                <div className='child'>
-                    {ele.clinicNumber && ele.clinicNumber.map((Elem) => {
-                        return (
-                            <p>{Elem}</p>
-                        )
-                    })}
-                    {ele.clinicNumberRegion2 && ele.clinicNumberRegion2.map((Elem) => {
-                        // console.log(Elem);
-                        return (
-                            <p>{Elem}</p>
+            <tr key={i}>
+                <td className='add_bottom'>
+                    <div className='child'>
+                        {ele.address.map((Elem,i) => {
+                            return (
+                                <p key={i}>{Elem}</p>
                             )
                         })}
-                    {ele.clinicNumberRegion3 && ele.clinicNumberRegion3.map((Elem) => {
-                        // console.log(Elem);
-                        return (
-                            <p>{Elem}</p>
-                        )
-                    })}
-                </div>
-            </td>
-            <td>
-                <div className='child'>
-                    {ele.privateNumber}
-                </div>
-            </td>
-            <td>
-                <div className='child'>
-                    {ele.name}
-                </div>
-            </td>
-            <td>
-                <div className='child'>
-                    {ele.category}
-                </div>
-            </td>
-            <td>
-                <div className='child'>
-                    {++num}
-                </div>
-            </td>
-        </tr>
+                    </div>
+                </td>
+                <td className='add_bottom'>
+                    <div className='child'>
+                        {ele.region.map((Elem) => {
+                            return (
+                                <p key={i}>{Elem}</p>
+                            )
+                        })}
+                    </div>
+                </td>
+
+                <td className='add_bottom'>
+                    <div className='child'>
+                        {ele.appointments.map((Elem) => {
+                            return (
+                                <p key={i}>{Elem}</p>
+                            )
+                        })}
+                        {ele.appointmentsRegion2 && ele.appointmentsRegion2.map((Elem) => {
+                            return (
+                                <p key={i}>{Elem}</p>
+                            )
+                        })}
+                    </div>
+                </td>
+                <td className='add_bottom'>
+                    <div className='child'>
+                        {ele.days.map((Elem) => {
+                            return (
+                                <p key={i}>{Elem}</p>
+                            )
+                        })}
+                        {ele.daysRegion2 && ele.daysRegion2.map((Elem) => {
+                            return (
+                                <p key={i}>{Elem}</p>
+                            )
+                        })}
+                        {ele.daysRegion3 && ele.daysRegion3.map((Elem) => {
+                            return (
+                                <p key={i}>{Elem}</p>
+                            )
+                        })}
+                    </div>
+                </td>
+                <td className='add_bottom'>
+                    <div className='child'>
+                        {ele.clinicNumber && ele.clinicNumber.map((Elem) => {
+                            return (
+                                <p key={i}>{Elem}</p>
+                            )
+                        })}
+                        {ele.clinicNumberRegion2 && ele.clinicNumberRegion2.map((Elem) => {
+                            // console.log(Elem);
+                            return (
+                                <p key={i}>{Elem}</p>
+                                )
+                            })}
+                        {ele.clinicNumberRegion3 && ele.clinicNumberRegion3.map((Elem) => {
+                            // console.log(Elem);
+                            return (
+                                <p key={i}>{Elem}</p>
+                            )
+                        })}
+                    </div>
+                </td>
+                <td>
+                    <div className='child'>
+                        {ele.privateNumber}
+                    </div>
+                </td>
+                <td>
+                    <div className='child'>
+                        {ele.name}
+                    </div>
+                </td>
+                <td>
+                    <div className='child'>
+                        {ele.category}
+                    </div>
+                </td>
+                <td>
+                    <div className='child'>
+                        {++num}
+                    </div>
+                </td>
+            </tr>
         )
         
     })

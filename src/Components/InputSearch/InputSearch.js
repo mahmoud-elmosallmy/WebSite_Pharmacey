@@ -8,28 +8,16 @@ import { useDoctors } from '../../Context/DoctorsContext';
 
 function InputSearch() {
 
-    const { 
-        filters: {search} ,
-          updateFilterValue 
-        //   , filterDoctors
-         } =useFilterDoctors();
+    const { filters: {search} , updateFilterValue } =useFilterDoctors();
     const {doctors} = useDoctors();
-        // console.log(updateFilterValue);
     const handleSubmit = (e) => {
         e.preventDefault()
     }
 
-    // const [text , setText] = useState()
-
-    // const handleText = (ele) => {
-    //     // console.log(ele.target.value);
-    //     setText(ele.target.value);
-    // }
-
     return (
         <InputSearchStyle>
             <div className='num_doctor'>
-                <div>عدد الدكاترة المسجلين <span>{doctors.length}</span></div>
+                <div>  عدد الدكاترة المسجلين في الموقع <span>{doctors.length}</span></div>
             </div>
             <h2>إبحث عن الدكتور</h2>
             <div className="input_search">
@@ -40,7 +28,6 @@ function InputSearch() {
                         <FaSearch /> بحث
                     </button>
                 </form>
-                {/* {filterDoctors.length > 0 && <SearchDoctors /> } */}
                 {search && <SearchDoctors /> }
             </div>
         </InputSearchStyle>

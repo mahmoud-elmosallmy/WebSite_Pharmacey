@@ -3,7 +3,8 @@ import { useFilterDoctors } from '../Context/DoctorsFilterContext'
 import styled from 'styled-components';
 // import { useParams } from 'react-router';
 
-function SearchForCategory({showDoctor }) {
+function SearchForRegion({showDoctor , howMenyNumber}) {
+// function SearchForRegion({showDoctor , howMenyNumber}) {
 
     // const {id} = useParams()
     // console.log(id);
@@ -12,7 +13,7 @@ function SearchForCategory({showDoctor }) {
     // const {doctorsCategory2,updateFilterValue , doctorsCategoryAll , doctorsCategory} = useFilterDoctors()
     const { updateFilterValue } = useFilterDoctors()
 
-    console.log(showDoctor);
+    // console.log(showDoctor);
     // console.log(doctorsCategory2);
 
     const getUniqueData = (data , property) => {
@@ -21,20 +22,21 @@ function SearchForCategory({showDoctor }) {
             // console.log(ele[property]);
             <Fragment key={i}></Fragment>
             return (
-                arr.push(ele[property])
+                arr.push(...ele[property])
                 )
             })
+            // console.log(arr);
         return arr = ["الجميع" , ...new Set(arr)]
     }
 
-    const categoryOnlyData = getUniqueData(showDoctor , "category")
-
-    const showCategoryData = categoryOnlyData.map((ele,i) => {
+    const regionOnlyData = getUniqueData(showDoctor , "region")
+    
+    const showRegionData = regionOnlyData.map((ele,i) => {
         return <button 
             key={i}
             type='button' 
             className={`${addActive === i ? "active" : ""}`} 
-            name='category' 
+            name='region_all' 
             onClick={(ele) => {
                     return (
                         updateFilterValue(ele),
@@ -46,12 +48,17 @@ function SearchForCategory({showDoctor }) {
                 {ele}
             </button>
     })
+    // console.log(showCategoryData);
     return (
         <SearchForCategoryStyle>
             <div className='container'>
                 <div className='box'>
-                    <h6>: حدد الدكتور عن طريق التخصص  </h6>
-                    {showCategoryData}
+                    <h6>: حدد الدكتور عن طريق إختيار البلد  </h6>
+                    {showRegionData}
+                    {/* {id === undefined && showAllCategoryData} */}
+                </div>
+                <div className='num'>
+                    <p><span>{howMenyNumber.length > 0 && howMenyNumber.length}</span> : عدد الدكتره  </p>
                 </div>
             </div>
         </SearchForCategoryStyle>
@@ -66,7 +73,7 @@ const SearchForCategoryStyle = styled.div`
         align-items: center;
         flex-wrap: wrap;
         margin: 15px;
-        gap: 8px;
+        gap: 5px;
 
     }
     .num {
@@ -110,4 +117,4 @@ const SearchForCategoryStyle = styled.div`
     }
 `;
 
-export default SearchForCategory
+export default SearchForRegion
