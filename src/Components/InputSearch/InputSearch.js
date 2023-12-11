@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { FaSearch } from "react-icons/fa";
 import { useFilterDoctors } from '../../Context/DoctorsFilterContext';
@@ -7,12 +7,21 @@ import { useDoctors } from '../../Context/DoctorsContext';
 
 function InputSearch() {
 
+    const [inputFocus , setInputFocus] = useState(null)
+    console.log(inputFocus);
     const { filters: {search} , updateFilterValue } =useFilterDoctors();
     const {doctors} = useDoctors();
+    // console.log(doctors);
 
     const handleSubmit = (e) => {
         e.preventDefault()
     }
+    // const inputFocus = (e) => {
+    //     e.preventDefault()
+    // }
+    function FocusExample() { 
+        setInputFocus(true)
+    };
 
     return (
         <InputSearchStyle>
@@ -22,7 +31,7 @@ function InputSearch() {
             <h2>إبحث عن الدكتور</h2>
             <div className="input_search">
                 <form onClick={handleSubmit} className="form-outline" >
-                    <input type="search" id="form1" className="form-control" name='search' placeholder='إكتب هنا' onChange={updateFilterValue} />
+                    <input type="search" id="form1" className="form-control" name='search' placeholder='إكتب هنا' onFocus={FocusExample}  onChange={updateFilterValue} />
                     <button type="submit" className="btn btn-primary" >
                         <FaSearch /> بحث
                     </button>
@@ -39,7 +48,7 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 height: 18vh;
-margin: 50px 0px;
+margin: 75px 0px;
 
 .num_doctor {
     display: flex;

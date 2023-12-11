@@ -41,6 +41,8 @@ border-radius: 12px;
 padding: 0 10px ;
 background: #fff;
 box-shadow: 0 8px 16px #0000000f;
+max-height: 300px;
+overflow: auto;
 
 .search_product {
     
