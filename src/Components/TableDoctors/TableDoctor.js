@@ -2,14 +2,11 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components';
 import Spine from '../Loading/Spine';
 import { useDoctors } from '../../Context/DoctorsContext';
-// import { useDoctors } from '../../Context/DoctorsContext';
 
 function TableDoctor({doctors}) {
 
     const { isLoadingDataCategory } = useDoctors()
 
-    
-    // console.log(doctors);
     let num = 0
     const showDoctors = doctors.map((ele,i) => {
         return(
@@ -74,13 +71,11 @@ function TableDoctor({doctors}) {
                             )
                         })}
                         {ele.clinicNumberRegion2 && ele.clinicNumberRegion2.map((Elem) => {
-                            // console.log(Elem);
                             return (
                                 <p key={i}>{Elem}</p>
                                 )
                             })}
                         {ele.clinicNumberRegion3 && ele.clinicNumberRegion3.map((Elem) => {
-                            // console.log(Elem);
                             return (
                                 <p key={i}>{Elem}</p>
                             )

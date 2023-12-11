@@ -14,9 +14,9 @@ function Departments() {
     }
 
 
-    const showDepartments = category.map((ele) => {
+    const showDepartments = category.map((ele,i) => {
         return(
-            <div className='box'>
+            <div key={i} className='box'>
                 <h2>{ele.category}</h2>
                 <img src={ele.image} className="card-img-top" alt={ele.category} />
                 <div className="card-body">

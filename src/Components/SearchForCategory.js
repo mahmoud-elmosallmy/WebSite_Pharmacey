@@ -5,20 +5,14 @@ import styled from 'styled-components';
 
 function SearchForCategory({showDoctor }) {
 
-    // const {id} = useParams()
-    // console.log(id);
-    const [addActive , setAddActive] = useState("")
-
-    // const {doctorsCategory2,updateFilterValue , doctorsCategoryAll , doctorsCategory} = useFilterDoctors()
     const { updateFilterValue } = useFilterDoctors()
+    const [addActive , setAddActive] = useState("")
+    
 
-    console.log(showDoctor);
-    // console.log(doctorsCategory2);
 
     const getUniqueData = (data , property) => {
         let arr = [];
         data.map((ele , i) => {
-            // console.log(ele[property]);
             <Fragment key={i}></Fragment>
             return (
                 arr.push(ele[property])

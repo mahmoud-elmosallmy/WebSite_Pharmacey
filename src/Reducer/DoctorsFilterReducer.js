@@ -85,9 +85,6 @@ function DoctorsFilterReducer(state , action) {
                     res = [...temFilterRegionch1 , ...temFilterRegionch2, ...temFilterRegionch3]
                 }
 
-            console.log(temFilterRegionch1);
-            console.log(temFilterRegionch2);
-            console.log(temFilterRegionch3);
             return {
                 ...state,
                 doctorsCategory: res
@@ -96,16 +93,13 @@ function DoctorsFilterReducer(state , action) {
             let {all_doctors3} = state;
             let {category , region_all} = state.filters;
             let data = [...all_doctors3]
-            // let result = data;
 
             let temFilterRegionch11;
             let temFilterRegionch22;
             let temFilterRegionch33;
-            // let specialization;
                 if (region_all !== "الجميع") {
                     temFilterRegionch11 = data.filter((curElem) => {
                         let a = {...curElem.region}
-                        // console.log(a);
                         return a[0] === region_all
                     });
 
@@ -119,24 +113,12 @@ function DoctorsFilterReducer(state , action) {
                         return a[2] === region_all
                     });
                     data = [...temFilterRegionch11 , ...temFilterRegionch22, ...temFilterRegionch33]
-                    console.log(data);
                 }
-                console.log(data);
                 if (category !== "الجميع") {
-                    console.log(data);
-
                     data = data.filter((curElem) => {
-                        // let a = {...curElem.category}
-                        console.log(curElem);
-                        console.log(curElem.category);
-                        console.log(category);
                         return curElem.category === category
                     });
-                    // console.log(specialization);
-                    // result = [...specialization]
-                    console.log(data);
                 }
-                // console.log(result);
 
             return {
                 ...state,

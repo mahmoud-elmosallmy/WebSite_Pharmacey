@@ -33,10 +33,8 @@ function DoctorsFilterContext({children}) {
     const updateFilterValue = (event) => {
         const name = event.target.name
         const value = event.target.value
-        // console.log(name);
         return (
             dispatch({type: "UPDATE_FILTER_VALUE", payload: {name , value}})
-            // dispatch({type: "FILTER_REGION_All", payload: [ state.all_doctors2 , state.filters.region]})
         )
     }
 
@@ -61,12 +59,6 @@ function DoctorsFilterContext({children}) {
         dispatch({type: "FILTER_REGION_All"})
         
     },[state.filters])
-
-    // useEffect(() => {
-    //     dispatch({type: "FILTER_REGION", payload: state.doctorsCategory})
-    // },[state.doctorsCategory])
-
-    console.log(state);
 
     return (
         <FilterDoctors.Provider value={{ ...state , setNumId , updateFilterValue }}>{children}</FilterDoctors.Provider>

@@ -4,12 +4,12 @@ import { FaSearch } from "react-icons/fa";
 import { useFilterDoctors } from '../../Context/DoctorsFilterContext';
 import SearchDoctors from './SearchDoctors';
 import { useDoctors } from '../../Context/DoctorsContext';
-// import { NavLink } from 'react-router-dom';
 
 function InputSearch() {
 
     const { filters: {search} , updateFilterValue } =useFilterDoctors();
     const {doctors} = useDoctors();
+
     const handleSubmit = (e) => {
         e.preventDefault()
     }
@@ -23,7 +23,6 @@ function InputSearch() {
             <div className="input_search">
                 <form onClick={handleSubmit} className="form-outline" >
                     <input type="search" id="form1" className="form-control" name='search' placeholder='إكتب هنا' onChange={updateFilterValue} />
-                    {/* <label className="form-label" htmlFor="form1">Search</label> */}
                     <button type="submit" className="btn btn-primary" >
                         <FaSearch /> بحث
                     </button>

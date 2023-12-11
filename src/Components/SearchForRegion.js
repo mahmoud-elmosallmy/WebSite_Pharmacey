@@ -4,28 +4,19 @@ import styled from 'styled-components';
 // import { useParams } from 'react-router';
 
 function SearchForRegion({showDoctor , howMenyNumber}) {
-// function SearchForRegion({showDoctor , howMenyNumber}) {
-
-    // const {id} = useParams()
-    // console.log(id);
+    
     const [addActive , setAddActive] = useState("")
 
-    // const {doctorsCategory2,updateFilterValue , doctorsCategoryAll , doctorsCategory} = useFilterDoctors()
     const { updateFilterValue } = useFilterDoctors()
-
-    // console.log(showDoctor);
-    // console.log(doctorsCategory2);
 
     const getUniqueData = (data , property) => {
         let arr = [];
         data.map((ele , i) => {
-            // console.log(ele[property]);
             <Fragment key={i}></Fragment>
             return (
                 arr.push(...ele[property])
                 )
             })
-            // console.log(arr);
         return arr = ["الجميع" , ...new Set(arr)]
     }
 
@@ -48,14 +39,13 @@ function SearchForRegion({showDoctor , howMenyNumber}) {
                 {ele}
             </button>
     })
-    // console.log(showCategoryData);
+    
     return (
         <SearchForCategoryStyle>
             <div className='container'>
                 <div className='box'>
                     <h6>: حدد الدكتور عن طريق إختيار البلد  </h6>
                     {showRegionData}
-                    {/* {id === undefined && showAllCategoryData} */}
                 </div>
                 <div className='num'>
                     <p><span>{howMenyNumber.length > 0 && howMenyNumber.length}</span> : عدد الدكتره  </p>
