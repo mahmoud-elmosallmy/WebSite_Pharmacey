@@ -10,6 +10,7 @@ import Support from './Pages/MainPags/Support';
 import ShowDoctor from './Components/InputSearch/ShowDoctor';
 import styled from 'styled-components';
 import AddDoctor from './Pages/Dashboard/AddDoctor';
+import ScrollUp from './Components/ScrollUp';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path={'/dashboard/adddoctor'} element={<AddDoctor />} />
 
           </Routes>
+          <ScrollUp />
           <Footer />
       </Router>
     </AppStyle>
