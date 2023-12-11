@@ -6,19 +6,19 @@ import styled from 'styled-components';
 function SearchDoctors() {
 
     const {filterDoctors } = useFilterDoctors()
-    // const {filterDoctors , setOnSearch} = useFilterDoctors()
 
     const showDoctorsSearch = filterDoctors.map((ele) => {
-        console.log(ele.id);
+        console.log(ele.region);
         return (
-            // <NavLink to={`/show_doctor/${ele.id}`} className='box' onClick={() => setOnSearch(ele.name)}>
             <NavLink to={`/show_doctor/${ele.id}`} className='box' >
                 <div className='data'>
-                    <h5>{ele.name}</h5>
                     <div className='category_region'>
                         <p>{ele.category}</p>
-                        <p>{ele.region}</p>
+                        <p className='region_child'>{ele.region.map((ele) => {
+                            return <span>{ele}</span>
+                        })}</p>
                     </div>
+                    <div className='name_doctor'><h5>{ele.name}</h5></div>
                 </div>
             </NavLink>
         )
@@ -66,9 +66,13 @@ box-shadow: 0 8px 16px #0000000f;
 
     .data {
         display: flex;
-        flex-direction: row-reverse;
+        align-items: center;
         justify-content: space-between;
         flex: 1;
+        .name_doctor {
+            width: calc(100% - 90px);
+            direction: rtl;
+        }
 
         .category_region {
             display: flex;
@@ -77,11 +81,19 @@ box-shadow: 0 8px 16px #0000000f;
             justify-content: space-around;
             flex-direction: row-reverse;
             border-right: 1px solid #000;
+
+            .region_child {
+                display: flex;
+                flex-direction: column;
+            }
         }
+
         h5,
         p {
             color: #000;
             transition: .3s;
+            /* flex: 0.9;
+            width: 80%; */
         }
         h5:hover,
         p:hover {
@@ -97,12 +109,12 @@ box-shadow: 0 8px 16px #0000000f;
         width: 100%;
 
         .box h5 {
-            font-size: 15px;
+            font-size: 12px;
         }
         .data .category_region {
             width: 90px !important;
             p {
-                font-size: 11px;
+                font-size: 8px;
                 margin-bottom: 0;
             }
         }
